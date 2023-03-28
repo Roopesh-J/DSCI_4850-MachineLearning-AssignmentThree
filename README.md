@@ -86,7 +86,7 @@ The model has higher precision but lower recall for class 0 and vice versa for c
 Because the model has a similar precision and recall for both classes, this indicates a balanced performance. This means that the model isn't better on class or the other. 
 
 ### Results for Fold 3:
-![fold2](https://user-images.githubusercontent.com/92547312/228123998-907fba04-6d86-4429-bdab-47663b5ed0af.jpeg)
+![fold3](https://user-images.githubusercontent.com/92547312/228124942-58470f1a-4bf1-465d-aba1-90da26775c84.jpeg)
 
 #### Linear Classification Report and Analysis: 
                         precision    recall  f1-score   support
@@ -123,3 +123,23 @@ The model has high precision but low recall for class 0, which means it has some
     weighted avg       0.64      0.64      0.64      5349
 
 Looking at the graph for this model, it is very obvious that the model is overfitting. In fact, we see it starting to oscillate between overfitting and underfitting. This means that the model will flip between the two fits as more and more data comes in. While it will still converge it is not a good way to train a model.
+
+
+## Choosing the best fold for each model
+The fold chosen for each model are as goes: 
+  Linear - 2
+  Poly - 2
+  RBF - 3
+  
+### Metrics summary and graphs for these models:
+          Model Name	Accuracy	Precision	Recall	F1-score	RMSE
+    0	    Linear	    0.65	    0.65	    0.65	  0.65	    0.59
+    1	    Poly	      0.57	    0.65	    0.57	  0.51	    0.65
+    2	    RBF	        0.64	    0.64	    0.64	  0.64	    0.60
+
+![foldx](https://user-images.githubusercontent.com/92547312/228125509-c403c78a-072c-485f-b066-7b4832055f17.jpeg)
+
+### Analysis 
+Going off the metrics table alone, the linear model seems to be the best since it has the highest metrics (accuracy, precision, recall and f1-score) across the board and the lowest error. The lowest error means that this linear model is also overfitting the least which is very important. ]
+
+Going off the graphs for these models, the linear model fits nearly perfectly with Fold 2. The training accuracy and validation accuracy just barely touch but don't crossover, while this is not ideal and potentially dangerous if more data comes in, it also indicates a really lower generalization error. Another thing to consider is that overscaling the linear model, it runs considerable faster than the other model and is simpler overall. These 2 attribtues also make it a more appealing model to choose.
