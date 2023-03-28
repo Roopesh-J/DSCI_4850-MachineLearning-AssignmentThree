@@ -132,14 +132,17 @@ The fold chosen for each model are as goes:
   RBF - 3
   
 ### Metrics summary and graphs for these models:
-          Model Name	Accuracy	Precision	Recall	F1-score	RMSE
-    0	    Linear	    0.65	    0.65	    0.65	  0.65	    0.59
-    1	    Poly	      0.57	    0.65	    0.57	  0.51	    0.65
-    2	    RBF	        0.64	    0.64	    0.64	  0.64	    0.60
+              Model Name	Accuracy	Precision	  Recall	  F1-score	  RMSE
+    0	    Linear	    0.65	    0.65	    0.65	  0.65	          0.59
+    1	    Poly	    0.57	    0.65	    0.57	  0.51	          0.65
+    2	    RBF	            0.64	    0.64	    0.64	  0.64	          0.60
 
 ![foldx](https://user-images.githubusercontent.com/92547312/228125509-c403c78a-072c-485f-b066-7b4832055f17.jpeg)
 
-### Analysis 
-Going off the metrics table alone, the linear model seems to be the best since it has the highest metrics (accuracy, precision, recall and f1-score) across the board and the lowest error. The lowest error means that this linear model is also overfitting the least which is very important. ]
+## Analysis and choosing the best model 
+Going off the metrics table alone, the linear model seems to be the best since it has the highest metrics (accuracy, precision, recall and f1-score) across the board and the lowest error. The lowest error means that this linear model is also overfitting the least which is very important.
 
 Going off the graphs for these models, the linear model fits nearly perfectly with Fold 2. The training accuracy and validation accuracy just barely touch but don't crossover, while this is not ideal and potentially dangerous if more data comes in, it also indicates a really lower generalization error. Another thing to consider is that overscaling the linear model, it runs considerable faster than the other model and is simpler overall. These 2 attribtues also make it a more appealing model to choose.
+
+
+###### In hindsight, I should have chosen fold 3 for the best poly kernel. This could have led to different final results and potentially a better model.
